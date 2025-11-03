@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/10/2025 às 16:08
+-- Tempo de geração: 03/11/2025 às 12:23
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `login`, `password`, `role`) VALUES
-(1, 'Bruno', 'Bruno@gmail.com', '$2y$10$dkbYKvKly92xLJTMMRz6GerZihYqJDL7icgazfCLZj2gqArWVs.Am', 'user');
+(1, 'Bruno', 'Bruno@gmail.com', '$2y$10$dkbYKvKly92xLJTMMRz6GerZihYqJDL7icgazfCLZj2gqArWVs.Am', 'user'),
+(2, 'Bruno', 'Bruno@gmail.com1', '$2y$10$Ic.WJ02aPvzOUk31uXT8IuJLH6EKOyXn7FtazUwnMU0ix6cOzJBrS', 'user');
 
 -- --------------------------------------------------------
 
@@ -51,6 +52,7 @@ INSERT INTO `users` (`id`, `name`, `login`, `password`, `role`) VALUES
 CREATE TABLE `vaquinha` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `link` text NOT NULL,
   `descp` text NOT NULL,
   `value` decimal(10,2) NOT NULL,
   `doado` decimal(10,2) NOT NULL
@@ -60,8 +62,9 @@ CREATE TABLE `vaquinha` (
 -- Despejando dados para a tabela `vaquinha`
 --
 
-INSERT INTO `vaquinha` (`id`, `title`, `descp`, `value`, `doado`) VALUES
-(1, 'Doar sangue', '1232131', 99999999.99, 99999999.99);
+INSERT INTO `vaquinha` (`id`, `title`, `link`, `descp`, `value`, `doado`) VALUES
+(1, 'Doar sangue', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCg6GlaCcu-BcNLDZ6P5xv388E7zqAxzmYg&s', 'Ajuda o cara que vai morrer', 99999999.99, 1502.00),
+(2, 'Novos programadores para o lol', 'https://img.odcdn.com.br/wp-content/uploads/2024/04/imagem_2024-04-30_172325065.png', 'REFAZER O TIME INTEIRO', 5.00, 756.00);
 
 --
 -- Índices para tabelas despejadas
@@ -87,13 +90,13 @@ ALTER TABLE `vaquinha`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `vaquinha`
 --
 ALTER TABLE `vaquinha`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
