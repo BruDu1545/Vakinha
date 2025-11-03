@@ -13,7 +13,7 @@ $logged = isset($_SESSION['id']) ? ($_SESSION['id']) : false;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="iccon" href="">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>BelaJu - SystemStock v0.1</title>
+    <title>Vaquinha - BETA v0.1</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@ $logged = isset($_SESSION['id']) ? ($_SESSION['id']) : false;
             include "pages/login.php";
         } else if ($page === "register" && !$logged) {
             include "pages/register.php";
-        } else if ($page === "home" || $logged) {
+        } else if ($page === "home" && $logged) {
             include "pages/home.php";
         } else {
             include "pages/inWork.php";

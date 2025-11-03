@@ -128,3 +128,15 @@ if (confirmarBtn) {
         }
     });
 }
+
+const rangeInput = document.getElementById('valorDoacao');
+const rangeValue = document.getElementById('rangeValue');
+
+
+if (rangeInput) {
+    rangeInput.addEventListener('input', function () {
+        const value = parseFloat(this.value).toFixed(2);
+        rangeValue.textContent = `R$ ${value.replace('.', ',')}`;
+        valorInput.value = value;
+    });
+}

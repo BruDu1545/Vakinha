@@ -6,30 +6,183 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
     background: url('https://i.redd.it/60llku4sja451.gif') no-repeat center center fixed;
     background-size: cover;
-    padding: 40px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Container principal */
-.main {
-    width: 90%;
-    max-width: 850px;
+/* HEADER */
+header {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 20px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #362de2, #0b00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a86cf2;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 40px;
+}
+
+/* SEÇÃO DO FORMULÁRIO */
+.form-section,
+#frm_login,
+#frm-register {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    height: fit-content;
+}
+
+/* FORMULÁRIOS DE LOGIN E REGISTRO CENTRALIZADOS */
+#frm_login,
+#frm-register {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container para centralizar os formulários de auth */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.auth-forms-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilos específicos para formulários de autenticação */
+.auth-form {
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 15px;
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     padding: 40px;
+    width: 100%;
+    max-width: 400px;
 }
 
-/* Título principal */
-.main h2 {
+.auth-form h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.auth-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e5e5e5;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.auth-form input::placeholder {
+    color: #cfcfcf;
+}
+
+.auth-form input:focus {
+    border-color: #7e6cf2;
+    box-shadow: 0 0 8px rgba(96, 45, 226, 0.6);
+}
+
+.auth-form input[type="submit"],
+.auth-form button {
+    background: linear-gradient(135deg, #362de2, #0b00e0);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-form input[type="submit"]:hover,
+.auth-form button:hover {
+    background: linear-gradient(135deg, #8361f5, #4519e3);
+    transform: translateY(-2px);
+}
+
+.form-section h2 {
     text-align: center;
     color: #fff;
     margin-bottom: 25px;
@@ -37,220 +190,283 @@ body {
     font-weight: 600;
 }
 
-/* Formulário */
+/* SEÇÃO DA LISTA */
+.list-section {
+    flex: 2;
+}
+
+.list-section h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* FORMULÁRIO DE VAQUINHA */
 #frm_vaquinha {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px;
+    gap: 20px;
 }
 
-#frm_vaquinha label {
+label {
     font-size: 0.95rem;
     font-weight: 500;
     color: #e5e5e5;
 }
 
-#frm_vaquinha input,
-#frm_vaquinha textarea {
+input,
+textarea {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
-    border-radius: 6px;
-    padding: 10px 12px;
+    border-radius: 8px;
+    padding: 12px 15px;
     font-size: 1rem;
     outline: none;
     transition: 0.3s;
+    width: 100%;
 }
 
-#frm_vaquinha input::placeholder,
-#frm_vaquinha textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: #cfcfcf;
 }
 
-#frm_vaquinha input:focus,
-#frm_vaquinha textarea:focus {
-    border-color: #a86cf2;
-    box-shadow: 0 0 6px rgba(142, 45, 226, 0.6);
+input:focus,
+textarea:focus {
+    border-color: #7e6cf2;
+    box-shadow: 0 0 8px rgba(96, 45, 226, 0.6);
 }
 
-/* Botão principal */
+/* BOTÕES */
 button {
-    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    background: linear-gradient(135deg, #362de2, #0b00e0);
     color: #fff;
     border: none;
-    border-radius: 6px;
-    padding: 12px;
+    border-radius: 8px;
+    padding: 14px;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
     letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #9a46e5, #5a19e3);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #8361f5, #4519e3);
+    transform: translateY(-2px);
 }
 
-/* Cards das vaquinhas */
+/* LISTA DE VAQUINHAS */
 .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
 }
 
 .card {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 20px;
-    width: 240px;
     text-align: center;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
     color: #fff;
+    line-height: 1.3;
 }
 
 .card p {
     font-size: 0.95rem;
     color: #eaeaea;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
-/* Botão de doação dentro do card */
+.card .meta {
+    font-weight: bold;
+    color: #a86cf2;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
 .card button {
     width: 100%;
-    background: rgba(142, 45, 226, 0.8);
+    background: rgba(131, 100, 236, 0.9);
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 6px;
     color: #fff;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: auto;
+    font-weight: 600;
 }
 
 .card button:hover {
-    background: rgba(142, 45, 226, 1);
+    background: rgb(69, 45, 226);
 }
 
-/* Modal de doação */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.no-image {
     width: 100%;
-    height: 100%;
-    backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
+    color: #aaa;
+    font-style: italic;
 }
 
-/* Conteúdo do modal */
-.modal-content {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    padding: 30px 20px;
+/* MODAL DE DOAÇÃO */
+dialog {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 15px;
+    padding: 40px;
     width: 90%;
-    max-width: 400px;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.modal-content h3 {
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
-
-.modal-content input {
-    width: 80%;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    margin-bottom: 15px;
-}
-
-.modal-content input::placeholder {
-    color: #e2e2e2;
-}
-
-/* Botão de confirmação */
-#confirmarDoacao {
-    width: 80%;
-}
-
-/* Botão de fechar */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 26px;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close:hover {
-    color: #a86cf2;
-}#fffremember-forgot a:hover {
-    text-decoration: underline;
-}
-
-.login {
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 16px;
+    max-width: 500px;
     color: #333;
-    font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-}
-
-.login:hover {
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    color: #fff;
-    transition: 0.5s;
-}
-
-.register-link {
-    font-size: 14px;
     text-align: center;
-    margin: 20px 0 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.register-link a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
 }
 
-.register- link a {
-    text-align: underline;
+dialog h3 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #362de2;
+    font-weight: 700;
+}
+
+.range-container {
+    margin: 25px 0;
+}
+
+.range-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    outline: none;
+    margin: 20px 0;
+    -webkit-appearance: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #362de2;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.range-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #362de2;
+    margin: 15px 0;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 14px;
+    font-size: 1.1rem;
+}
+
+#cancelarDoacao {
+    background: #f0f0f0;
+    color: #555;
+}
+
+#cancelarDoacao:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 968px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-section,
+    .list-section {
+        width: 100%;
+    }
+
+    .list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .auth-forms-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .list {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-form {
+        padding: 30px 20px;
+    }
 }

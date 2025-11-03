@@ -1,9 +1,12 @@
-<form id="frm_login">
-    <label for="user">Usuario</label>
-    <input type="text" name="user" id="user">
-    
-    <label for="password">Senha</label>
-    <input type="password" name="password" id="password">
+<div class="auth-form">
+    <h2>Login</h2>
+    <form id="frm_login">
+        <label for="user">Usuário</label>
+        <input type="text" name="user" id="user" placeholder="Digite seu usuário" required>
 
-    <button id="btn_login">Entrar</button>
-</form>
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
+
+        <button type="submit" id="btn_login">Entrar</button>
+    </form>
+</div>

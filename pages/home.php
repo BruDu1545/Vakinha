@@ -1,17 +1,22 @@
-<div class="main">
-    <h2>Criar Vaquinha</h2>
-    <form id="frm_vaquinha">
-        <label for="titulo">Título da Campanha:</label>
-        <input type="text" id="titulo" name="titulo" required>
+<div class="container">
+    <section class="form-section">
+        <h2>Criar Vaquinha</h2>
+        <form id="frm_vaquinha">
+            <label for="titulo">Título da Campanha:</label>
+            <input type="text" id="titulo" name="titulo" required>
 
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
-        <label for="valor">Meta de Arrecadação (R$):</label>
-        <input type="number" id="valor" name="valor" step="0.01" required>
+            <label for="valor">Meta de Arrecadação (R$):</label>
+            <input type="number" id="valor" name="valor" step="0.01" required>
 
-        <button type="submit">Enviar</button>
-    </form>
+            <label for="link">Link: </label>
+            <input type="text" id="link" name="link" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
     <div class="list">
         <?php
         $qr = $pdo->query("SELECT * FROM vaquinha");
@@ -20,10 +25,10 @@
         foreach ($list as $row) {
             echo '
                     <div class="card">
-                        <h3>' . $row['title'] . '</h3>
+                        ' . ($row['link'] ? '<img src="' . $row['link'] . '" class="card-img" alt="' . $row['title'] . '">' : '<div class="no-image">Sem imagem</div>') . '                        <h3>' . $row['title'] . '</h3>
                         <p>' . $row['descp'] . '</p>
-                        <p>' . $row['value'] . '</p>
-
+                        <p>Meta: ' . $row['value'] . '</p>
+                        <p>Arrecadado: ' . $row['doado'] . '</p>
                         <button data-id="' . $row['id'] . '">Doar</button>
                     </div>
                 ';
@@ -35,8 +40,8 @@
             <h3>Fazer uma Doação</h3>
             <input type="hidden" id="campanhaId" name="campanhaId">
 
-            <label for="valorDoacao">Valor da Doação (R$):</label>
-            <input type="number" id="valorDoacao" name="valorDoacao" step="0.01" required>
+            <input type="range" id="valorDoacao" name="valorDoacao" min="1" max="1000" step="1" value="10">
+            <div class="range-value" id="rangeValue">R$ 500,00</div>
 
             <div style="margin-top: 15px;">
                 <button id="confirmarDoacao">Confirmar</button>
